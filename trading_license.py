@@ -22,8 +22,10 @@ b=browser.find_element(By.XPATH, '/html/body/form/div[3]/div/div[4]/input')
 b.send_keys('71400')
 button=browser.find_element(By.XPATH,'//*[@id="ctl00_body_btnSearch"]')
 button.click()
-browser.find_element(By.XPATH,'//*[@id="ctl00_body_gvSearchResults"]/tbody/tr/td/div[3]/a').click()
-
-textt=browser.find_element_by_class_name("memForAcr")
+textt=browser.find_element(By.XPATH,'//*[@id="ctl00_body_gvSearchResults"]/tbody/tr/td/div[3]/strong[1]')
 
 print(textt.text)
+if(textt.text=="This member is a current authorised credit representative for"):
+    print ("Member Authorised")
+else:
+    print ("Not Authorised")
